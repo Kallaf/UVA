@@ -11,13 +11,7 @@ def convert(no):
 		no *=-1
 		no = twosComp(no)
 	b = '{:032b}'.format(no)
-	c = '{:032b}'.format(365779719)
-	b1 = b[24:]
-	b2 = b[16:24]
-	b3 = b[8:16]
-	b4 = b[:8]
-	rev = b1+b2+b3+b4
-	rev = int(rev,2)
+	rev = int(b[24:]+b[16:24]+b[8:16]+b[:8],2)
 	if rev >  2147483647:
 		rev = twosComp(rev) * -1
 	return rev
