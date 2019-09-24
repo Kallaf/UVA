@@ -4,7 +4,7 @@
 using namespace std;
 
 int t;
-double d,v,u,h;
+double d,v,u;
 
 int main()
 {
@@ -12,12 +12,10 @@ int main()
     for(int tc=1;tc<=t;tc++)
     {
     	cin >> d >> v >> u;
-        h = sqrt(u*u - v*v);
-
-        if(u<=v || v == 0)
+        if(u<=v || !v)
             printf("Case %d: can't determine\n", tc);
         else
-            printf("Case %d: %.3lf\n", tc,d/h - d/u);
+            printf("Case %d: %.3lf\n", tc,d/sqrt(u*u - v*v) - d/u);
     }
 
     return 0;
